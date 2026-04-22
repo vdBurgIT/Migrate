@@ -11,7 +11,7 @@ export default defineConfig({
     tailwindPlugin(),
   ],
   server: {
-    allowedHosts: ['deck.goldenmaster.cloud'],
+    allowedHosts: ['migrate.nerd.ms'],
     fs: {
       allow: ['..', '../..'],
     },
