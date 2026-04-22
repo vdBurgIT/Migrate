@@ -1,0 +1,138 @@
+.slide {
+  background: color-mix(in oklch, var(--background) 85%, transparent);
+  padding: 0 0 44px 0;
+  overflow: hidden;
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  color: var(--foreground);
+  line-height: 1.1;
+}
+
+/* Horizontal timeline layout */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  animation: step-in 0.5s ease both;
+}
+
+@keyframes step-in {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stepIndicator {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stepBadge {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 0;
+}
+
+.stepLine {
+  flex: 1;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stepTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--foreground);
+  letter-spacing: -0.2px;
+}
+
+/* Code editor block */
+.codeBlock {
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 13px;
+  color: var(--foreground);
+  background: var(--secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.codeDots {
+  display: flex;
+  gap: 6px;
+  padding: 10px 14px 0;
+}
+.codeDots span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--border);
+}
+
+.codeLine {
+  padding: 10px 14px 14px;
+  line-height: 1.5;
+}
+
+.codeDim {
+  color: var(--muted-foreground);
+  margin-right: 8px;
+}
+
+.codeKeyword {
+  color: var(--accent);
+}
+
+.codeString {
+  color: var(--muted-foreground);
+}
+
+/* Pro-tip alert */
+.tip {
+  animation: step-in 0.5s ease 0.45s both;
+}
